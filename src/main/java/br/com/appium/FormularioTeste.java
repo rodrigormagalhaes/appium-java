@@ -1,20 +1,17 @@
 package br.com.appium;
 
+import br.com.appium.core.DriverFactory;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
-import io.appium.java_client.remote.MobileCapabilityType;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 
 
 public class FormularioTeste {
@@ -23,14 +20,7 @@ public class FormularioTeste {
 
     @Before
     public void inicializarAppium() throws MalformedURLException {
-        DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
-        desiredCapabilities.setCapability("platformName", "Android");
-        desiredCapabilities.setCapability("deviceName", "emulator-5554");
-        desiredCapabilities.setCapability("automationName", "uiautomator2");
-        desiredCapabilities.setCapability(MobileCapabilityType.APP, "/home/rodrigo/workspace/appium-java/src/main/resources/CTAppium-1-1.apk");
-
-        driver = new AndroidDriver<MobileElement> (new URL("http://0.0.0.0:4723/wd/hub"), desiredCapabilities);
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver = DriverFactory.getDriver();
 
         //Selecionar formulário
         driver.findElement(By.xpath("//*[@text='Formulário']")).click();
@@ -47,7 +37,7 @@ public class FormularioTeste {
 
         elementoNome.sendKeys("Rodrigo Magalhães");
 
-        Assert.assertEquals("Rodrigo Magalhães",elementoNome.getText());
+        Assert.assertEquals("Rodrigo Magalhães", elementoNome.getText());
     }
 
     @Test
@@ -104,7 +94,7 @@ public class FormularioTeste {
 
     @After
     public void tearDown() {
-        driver.quit();
+        DriverFactory.killDriver();
     }
 
 }
