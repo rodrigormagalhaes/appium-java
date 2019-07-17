@@ -1,4 +1,4 @@
-package br.com.appium;
+package br.com.appium.tests;
 
 import com.sun.swing.internal.plaf.synth.resources.synth_sv;
 import io.appium.java_client.MobileElement;

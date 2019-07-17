@@ -10,7 +10,7 @@ public class DSL {
         getDriver().findElement(by).sendKeys(texto);
     }
 
-    public String obterText(By by) {
+    public String obterTexto(By by) {
         return getDriver().findElement(by).getText();
     }
 
