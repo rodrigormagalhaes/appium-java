@@ -1,13 +1,11 @@
 package br.com.appium.pages;
 
-import br.com.appium.core.DSL;
+import br.com.appium.core.BasePage;
 
-public class MenuPage {
-
-    private DSL dsl = new DSL();
+public class MenuPage extends BasePage {
 
     public void acessarFormulario() {
-        dsl.clicarPorTexto("Formulário");
+       clicarPorTexto("Formulário");
 
     }
 }

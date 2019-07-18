@@ -1,9 +1,8 @@
 package br.com.appium.tests;
 
-import br.com.appium.core.DriverFactory;
+import br.com.appium.core.BaseTest;
 import br.com.appium.pages.FormularioPage;
 import br.com.appium.pages.MenuPage;
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +11,7 @@ import java.net.MalformedURLException;
 import static org.junit.Assert.*;
 
 
-public class FormularioTeste {
+public class FormularioTeste extends BaseTest {
 
     private MenuPage menu = new MenuPage();
     private FormularioPage form = new FormularioPage();
@@ -61,9 +60,6 @@ public class FormularioTeste {
         assertTrue(form.obterSwitchCadastrado().endsWith("Off"));
     }
 
-    @After
-    public void tearDown() {
-        DriverFactory.killDriver();
-    }
+
 
 }
