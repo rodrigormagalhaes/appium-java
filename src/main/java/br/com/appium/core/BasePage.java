@@ -1,6 +1,9 @@
 package br.com.appium.core;
 
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
+
+import java.util.List;
 
 import static br.com.appium.core.DriverFactory.getDriver;
 
@@ -28,5 +31,11 @@ public class BasePage {
 
     public boolean isChecked(By by){
         return getDriver().findElement(by).getAttribute("checked").equals("true");
+    }
+
+    public boolean existeElementoPorTexto(String name) {
+        List<MobileElement> elements = getDriver().findElements(By.xpath("//*[@text='"+ name +"']"));
+
+        return elements.size() > 0;
     }
 }

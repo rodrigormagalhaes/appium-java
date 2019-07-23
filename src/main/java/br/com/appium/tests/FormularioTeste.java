@@ -1,12 +1,17 @@
 package br.com.appium.tests;
 
 import br.com.appium.core.BaseTest;
+import br.com.appium.core.DriverFactory;
 import br.com.appium.pages.FormularioPage;
 import br.com.appium.pages.MenuPage;
 import org.junit.Before;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.*;
 
@@ -58,6 +63,23 @@ public class FormularioTeste extends BaseTest {
         assertEquals("Console: switch", form.obterConsoleCadastrado());
         assertTrue(form.obterCheckCadastrado().endsWith("Marcado"));
         assertTrue(form.obterSwitchCadastrado().endsWith("Off"));
+    }
+
+    @Test
+    public void deveRealizarCadastroDemorado() {
+        form.escreverNome("Rodrigo");
+
+        DriverFactory.getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
+
+        form.salvarDemorado();
+
+        //wait_(5000);
+
+        WebDriverWait wait = new WebDriverWait(DriverFactory.getDriver(), 10);
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(By.xpath("//*[@text='Nome: Rodrigo']")));
+
+        assertEquals("Nome: Rodrigo", form.obterNomeCadastrado());
+
     }
 
 
