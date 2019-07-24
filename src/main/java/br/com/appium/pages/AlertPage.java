@@ -5,24 +5,23 @@ import org.openqa.selenium.By;
 
 public class AlertPage extends BasePage {
 
-    public void clicarAlertConfirm() {
-        clicarPorTexto("ALERTA CONFIRM");
+    public void clickConfirmAlert() {
+        clickByText("ALERTA CONFIRM");
     }
 
-    public String obterTituloAlert() {
-        return obterTexto(By.id("android:id/alertTitle"));
+    public String getAlertTitle() {
+        return getText(By.id("android:id/alertTitle"));
     }
 
-    public String obterMensagemAlert() {
-        return obterTexto(By.id("android:id/message"));
-
+    public String getAlertMsg() {
+        return getText(By.id("android:id/message"));
     }
 
     public void confirmAlert() {
-        clicarPorTexto("CONFIRMAR");
+        clickByText("CONFIRMAR");
     }
 
-    public void sair() {
-        clicarPorTexto("SAIR");
+    public void exit() {
+        clickByText("SAIR");
     }
 }

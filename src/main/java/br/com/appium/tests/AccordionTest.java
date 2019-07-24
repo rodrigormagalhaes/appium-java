@@ -12,12 +12,12 @@ public class AccordionTest extends BaseTest {
     private AccordionPage accordionPage = new AccordionPage();
 
     @Test
-    public void deveInteragirComAccordion() {
+    public void shouldInteractWithAccordion() {
         //acessar menu Accordion
-        menuPage.acessarAccordion();
+        menuPage.clickAccordion();
 
         //clicar opção 1
-        accordionPage.selecionarOp1();
+        accordionPage.selectOp1();
 
         wait_(1000);
         //verificar texto opção 1

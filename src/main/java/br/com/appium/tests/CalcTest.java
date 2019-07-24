@@ -11,10 +11,10 @@ import java.net.URL;
 
 import org.junit.Test;
 
-public class CalculadoraTeste {
+public class CalcTest {
 
     @Test
-    public void somaDoisValores() throws MalformedURLException {
+    public void sumTwoValues() throws MalformedURLException {
 
         DesiredCapabilities desiredCapabilities = new DesiredCapabilities();
         desiredCapabilities.setCapability("platformName", "Android");

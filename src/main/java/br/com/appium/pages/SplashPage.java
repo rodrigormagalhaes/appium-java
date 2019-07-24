@@ -11,11 +11,11 @@ import static br.com.appium.core.DriverFactory.getDriver;
 
 public class SplashPage extends BasePage {
 
-    public boolean isTelaSplashVisivel() {
-        return existeElementoPorTexto("Splash!");
+    public boolean isScreenSplashVisibel() {
+        return existElementByText("Splash!");
     }
 
-    public void aguardarSplashDesaparecer() {
+    public void waitSplashBecomeInvisible() {
         getDriver().manage().timeouts().implicitlyWait(0, TimeUnit.SECONDS);
 
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);

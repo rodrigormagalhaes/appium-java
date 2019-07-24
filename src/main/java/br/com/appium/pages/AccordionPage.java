@@ -5,12 +5,12 @@ import org.openqa.selenium.By;
 
 public class AccordionPage extends BasePage {
 
-    public void selecionarOp1() {
-        clicarPorTexto("Opção 1");
+    public void selectOp1() {
+        clickByText("Opção 1");
     }
 
     public String getValueOp1() {
-        return obterTexto(By.xpath("//*[@text='Opção 1']/../..//following-sibling::android.view.ViewGroup//android.widget.TextView"));
+        return getText(By.xpath("//*[@text='Opção 1']/../..//following-sibling::android.view.ViewGroup//android.widget.TextView"));
     }
 
 }

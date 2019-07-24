@@ -1,28 +1,28 @@
 package br.com.appium.tests;
 
 import br.com.appium.core.BaseTest;
-import br.com.appium.pages.AbasPage;
+import br.com.appium.pages.TabsPage;
 import br.com.appium.pages.MenuPage;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class AbasTest extends BaseTest {
+public class TabsTest extends BaseTest {
 
     private MenuPage menuPage = new MenuPage();
-    private AbasPage abasPage = new AbasPage();
+    private TabsPage tabsPage = new TabsPage();
 
      @Test
-     public void deveInteragirComAbas() {
+     public void shouldInteractWithTabs() {
          //acessar menu abas
-         menuPage.acessarAbas();
+         menuPage.clickTabs();
 
          //verificar que está na aba 1
-         Assert.assertTrue(abasPage.isAba1());
+         Assert.assertTrue(tabsPage.isTab1());
 
          //clicar na aba 2
-         abasPage.selecionarAba2();
+         tabsPage.selectTab2();
 
          //verificar que está na aba 2
-         Assert.assertTrue(abasPage.isAba2());
+         Assert.assertTrue(tabsPage.isTab2());
      }
 }

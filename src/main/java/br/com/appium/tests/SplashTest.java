@@ -3,7 +3,7 @@ package br.com.appium.tests;
 import br.com.appium.core.BaseTest;
 import br.com.appium.pages.MenuPage;
 import br.com.appium.pages.SplashPage;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import static org.junit.Assert.*;
 
@@ -13,16 +13,16 @@ public class SplashTest extends BaseTest {
     private SplashPage splashPage = new SplashPage();
 
     @Test
-    public void deveAguardarSplashDesaparecer() {
-        menu.acessarSplash();
+    public void shouldWaitSplashBecomeInvisible() {
+        menu.clickSplash();
 
         //verifica que splash está visível
-        splashPage.isTelaSplashVisivel();
+        splashPage.isScreenSplashVisibel();
 
         //aguarda saída do splash
-        splashPage.aguardarSplashDesaparecer();
+        splashPage.waitSplashBecomeInvisible();
 
         //verificar que o form está aparecendo
-        assertTrue(splashPage.existeElementoPorTexto("Formulário"));
+        assertTrue(splashPage.existElementByText("Formulário"));
     }
 }

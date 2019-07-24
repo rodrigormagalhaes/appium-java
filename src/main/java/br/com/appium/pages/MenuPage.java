@@ -4,23 +4,23 @@ import br.com.appium.core.BasePage;
 
 public class MenuPage extends BasePage {
 
-    public void acessarFormulario() {
-       clicarPorTexto("Formulário");
+    public void clickForm() {
+       clickByText("Formulário");
     }
 
-    public void acessarSplash() {
-        clicarPorTexto("Splash");
+    public void clickSplash() {
+        clickByText("Splash");
     }
 
-    public void acessarAlertas() {
-        clicarPorTexto("Alertas");
+    public void clickAlerts() {
+        clickByText("Alertas");
     }
 
-    public void acessarAbas() {
-        clicarPorTexto("Abas");
+    public void clickTabs() {
+        clickByText("Abas");
     }
 
-    public void acessarAccordion() {
-        clicarPorTexto("Accordion");
+    public void clickAccordion() {
+        clickByText("Accordion");
     }
 }

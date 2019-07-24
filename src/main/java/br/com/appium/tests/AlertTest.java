@@ -12,24 +12,24 @@ public class AlertTest extends BaseTest {
     private AlertPage alertPage = new AlertPage();
 
     @Test
-    public void deveConfirmarAlerta() {
+    public void shouldConfirmAlert() {
         //acessa menu alerta
-        menu.acessarAlertas();
+        menu.clickAlerts();
 
         //clicar em alert confirm
-        alertPage.clicarAlertConfirm();
+        alertPage.clickConfirmAlert();
 
         //verificar os textos
-        Assert.assertEquals("Info", alertPage.obterTituloAlert());
-        Assert.assertEquals("Confirma a operação?", alertPage.obterMensagemAlert());
+        Assert.assertEquals("Info", alertPage.getAlertTitle());
+        Assert.assertEquals("Confirma a operação?", alertPage.getAlertMsg());
 
         //confirmar alerta
         alertPage.confirmAlert();
 
         //verificar nova mensagem
-        Assert.assertEquals("Confirmado", alertPage.obterMensagemAlert());
+        Assert.assertEquals("Confirmado", alertPage.getAlertMsg());
 
         //sair
-        alertPage.sair();
+        alertPage.exit();
     }
 }

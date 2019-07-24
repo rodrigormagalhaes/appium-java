@@ -8,24 +8,24 @@ import java.util.List;
 import static br.com.appium.core.DriverFactory.getDriver;
 
 public class BasePage {
-    public void escrever(By by, String texto) {
-        getDriver().findElement(by).sendKeys(texto);
+    public void sendKeys(By by, String text) {
+        getDriver().findElement(by).sendKeys(text);
     }
 
-    public String obterTexto(By by) {
+    public String getText(By by) {
         return getDriver().findElement(by).getText();
     }
 
-    public void selecionarCombo(By by, String valor) {
+    public void selectCombo(By by, String value) {
         getDriver().findElement(by).click();
-        clicarPorTexto(valor);
+        clickByText(value);
     }
 
-    public void clicarPorTexto(String texto) {
-        clicar(By.xpath("//*[@text='"+texto+"']"));
+    public void clickByText(String text) {
+        click(By.xpath("//*[@text='"+text+"']"));
     }
 
-    public void clicar(By by) {
+    public void click(By by) {
         getDriver().findElement(by).click();
     }
 
@@ -33,7 +33,7 @@ public class BasePage {
         return getDriver().findElement(by).getAttribute("checked").equals("true");
     }
 
-    public boolean existeElementoPorTexto(String name) {
+    public boolean  existElementByText(String name) {
         List<MobileElement> elements = getDriver().findElements(By.xpath("//*[@text='"+ name +"']"));
 
         return elements.size() > 0;
