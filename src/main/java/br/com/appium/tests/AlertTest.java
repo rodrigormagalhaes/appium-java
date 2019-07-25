@@ -4,6 +4,7 @@ import br.com.appium.core.BaseTest;
 import br.com.appium.pages.AlertPage;
 import br.com.appium.pages.MenuPage;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class AlertTest extends BaseTest {
@@ -11,10 +12,14 @@ public class AlertTest extends BaseTest {
     private MenuPage menu = new MenuPage();
     private AlertPage alertPage = new AlertPage();
 
-    @Test
-    public void shouldConfirmAlert() {
+    @Before
+    public void setUp() {
         //acessa menu alerta
         menu.clickAlerts();
+    }
+
+    @Test
+    public void shouldConfirmAlert() {
 
         //clicar em alert confirm
         alertPage.clickConfirmAlert();
@@ -31,5 +36,15 @@ public class AlertTest extends BaseTest {
 
         //sair
         alertPage.exit();
+    }
+
+    @Test
+    public void shouldClickOutAlert() {
+        alertPage.clickSimpleAlert();
+
+        wait_(1000);
+        alertPage.clickOutBox();
+
+        Assert.assertFalse(alertPage.existElementByText("Pode clicar no OK ou fora da caixa para sair"));
     }
 }

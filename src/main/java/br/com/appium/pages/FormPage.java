@@ -2,8 +2,9 @@ package br.com.appium.pages;
 
 import br.com.appium.core.BasePage;
 import io.appium.java_client.MobileBy;
+import io.appium.java_client.MobileElement;
 import org.openqa.selenium.By;
-
+import static br.com.appium.core.DriverFactory.getDriver;
 
 public class FormPage extends BasePage {
 
@@ -62,5 +63,18 @@ public class FormPage extends BasePage {
     public String getSwitchRegistered() {
         return getText(By.xpath("//android.widget.TextView[starts-with(@text, 'Switch:')]"));
 
+    }
+
+    public void clickSeekBar(double position) {
+         int delta = 50;
+
+         MobileElement seekBar = getDriver().findElement(MobileBy.AccessibilityId("slid"));
+
+         int y = seekBar.getLocation().y + (seekBar.getSize().height / 2);
+         int xInicial = seekBar.getLocation().x + delta;
+         int x = (int) (xInicial + ((seekBar.getSize().width - 2* delta) * position));
+
+
+         tap(x, y);
     }
 }

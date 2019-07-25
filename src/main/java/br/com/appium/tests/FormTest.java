@@ -4,6 +4,7 @@ import br.com.appium.core.BaseTest;
 import br.com.appium.core.DriverFactory;
 import br.com.appium.pages.FormPage;
 import br.com.appium.pages.MenuPage;
+import io.appium.java_client.MobileBy;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.By;
@@ -82,6 +83,27 @@ public class FormTest extends BaseTest {
 
     }
 
+    @Test
+    public void shouldChangeDate() {
+        form.clickByText("01/01/2000");
+        form.clickByText("20");
+        form.clickByText("OK");
+        assertTrue(form.existElementByText("20/2/2000"));
+    }
 
+    @Test
+    public void shouldChangeHour() {
+        form.clickByText("06:00");
+        form.click(MobileBy.AccessibilityId("10"));
+        form.click(MobileBy.AccessibilityId("40"));
+        form.clickByText("OK");
+        assertTrue(form.existElementByText("10:40"));
+    }
 
+    @Test
+    public void shouldInteractWithSeekBar() {
+        form.clickSeekBar(0.23);
+
+        form.save();
+    }
 }
