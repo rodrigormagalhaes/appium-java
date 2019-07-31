@@ -39,4 +39,10 @@ public class MenuPage extends BasePage {
 
         clickByText("Swipe List");
     }
+
+    public void clickDragAndDrop() {
+        scrollDown();
+
+        clickByText("Drag and drop");
+    }
 }
