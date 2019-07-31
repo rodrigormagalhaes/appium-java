@@ -27,4 +27,16 @@ public class MenuPage extends BasePage {
     public void accessClicks() {
         clickByText("Cliques");
     }
+
+    public void clickSwipe() {
+        scrollDown();
+
+        clickByText("Swipe");
+    }
+
+    public void clickSwipeList() {
+        scrollDown();
+
+        clickByText("Swipe List");
+    }
 }

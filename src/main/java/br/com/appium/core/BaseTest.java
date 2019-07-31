@@ -23,7 +23,7 @@ public class BaseTest {
     }
 
     @AfterClass
-    public static void finalizarClasse() {
+    public static void finalizeClass() {
         DriverFactory.killDriver();
     }
 
