@@ -1,7 +1,8 @@
 ### Automação de testes de aplicativos com Appium
 
 - **Pré requisito**
-  > [Android Studio](https://developer.android.com/studio) 
+  > [Android Studio](https://developer.android.com/studio)
+  
   > [Appium](https://github.com/appium/appium-desktop/releases/tag/v1.3.2) 
   
 
@@ -34,9 +35,9 @@ chmod +x appium-xxxx.AppImage
 
 - **Executar testes**:
 ```
-IntelliJ > botão direito no diretório tests > Run
-IntelliJ > arquivo de teste > botão direito no nome do teste > Run
-IntelliJ > arquivo de teste > seção esquerda do arquivo > Run Test
+- IntelliJ > botão direito no diretório tests > Run
+- IntelliJ > arquivo de teste > botão direito no nome do teste > Run
+- IntelliJ > arquivo de teste > seção esquerda do arquivo > Run Test
 
 ```
 
