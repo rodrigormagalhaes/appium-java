@@ -1,6 +1,6 @@
 ### Automação de testes de aplicativos com Appium
 
-- **Pré requisito**
+- **Pré requisitos**
   > [Android Studio](https://developer.android.com/studio)
   
   > [Appium](https://github.com/appium/appium-desktop/releases/tag/v1.3.2) 
