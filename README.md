@@ -1,4 +1,4 @@
-### Automação de testes de contrato de API com Joi
+### Automação de testes de aplicativos com Appium
 
 - **Pré requisito**
   > [Android Studio](https://developer.android.com/studio) 
