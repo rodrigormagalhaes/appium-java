@@ -45,4 +45,8 @@ public class MenuPage extends BasePage {
 
         clickByText("Drag and drop");
     }
+
+    public void clickHibrido() {
+        clickByText("SeuBarriga Híbrido");
+    }
 }
