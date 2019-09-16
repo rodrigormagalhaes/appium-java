@@ -13,7 +13,9 @@ public class WebViewTest extends BaseTest {
     @Test
     public void shouldDoLogin() {
         menu.clickHibrido();
+
         wait_(3000);
+
         page.enterWebContext();
 
         //preencher email

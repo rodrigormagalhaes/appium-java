@@ -122,4 +122,9 @@ public class BasePage {
                 .perform();
     }
 
+    public void longClick(By by) {
+        new TouchAction(getDriver()).longPress(getDriver().findElement(by)).perform();
+    }
+
+
 }

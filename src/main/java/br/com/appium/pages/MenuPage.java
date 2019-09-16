@@ -49,4 +49,8 @@ public class MenuPage extends BasePage {
     public void clickHibrido() {
         clickByText("SeuBarriga Híbrido");
     }
+
+    public void clickSBNativo() {
+        clickByText("SeuBarriga Nativo");
+    }
 }

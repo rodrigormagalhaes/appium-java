@@ -12,7 +12,7 @@ public class WebViewPage {
         Set<String> contextHandles = getDriver().getContextHandles();
 
         for(String valor: contextHandles) {
-            System.out.print(valor);
+            System.out.println(valor);
         }
 
         getDriver().context((String) contextHandles.toArray()[1]);
