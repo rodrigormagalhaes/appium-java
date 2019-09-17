@@ -2,14 +2,12 @@ package br.com.appium.tests;
 
 import br.com.appium.core.BaseTest;
 import br.com.appium.pages.MenuPage;
-import br.com.appium.pages.seuBarriga.SBAccountsPage;
-import br.com.appium.pages.seuBarriga.SBLoginPage;
-import br.com.appium.pages.seuBarriga.SBMenuPage;
-import org.junit.Assert;
+import br.com.appium.pages.seuBarriga.*;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class SBTest extends BaseTest {
 
@@ -17,6 +15,8 @@ public class SBTest extends BaseTest {
     private SBLoginPage login = new SBLoginPage();
     private SBMenuPage sbMenu = new SBMenuPage();
     private SBAccountsPage account = new SBAccountsPage();
+    private SBMovementPage sbMovementPage = new SBMovementPage();
+    private SBHomePage sbHomePage = new SBHomePage();
 
     @Before
     public void setUp() {
@@ -48,6 +48,34 @@ public class SBTest extends BaseTest {
 
     }
 
+    @Test
+    public void shouldValidateInclusionMove() {
+        sbMenu.clickMovement();
 
+        sbMovementPage.save();
+        assertTrue(sbMovementPage.existElementByText("Descrição é um campo obrigatório"));
+
+        sbMovementPage.setDescription("Desc");
+        sbMovementPage.save();
+        assertTrue(sbMovementPage.existElementByText("Interessado é um campo obrigatório"));
+
+        sbMovementPage.setInterested("Interessado");
+        sbMovementPage.save();
+        assertTrue(sbMovementPage.existElementByText("Valor é um campo obrigatório"));
+
+        sbMovementPage.setValue("123");
+        sbMovementPage.save();
+        assertTrue(sbMovementPage.existElementByText("Conta é um campo obrigatório"));
+
+        sbMovementPage.setAccount("Conta para alterar");
+        sbMovementPage.save();
+        assertTrue(sbMovementPage.existElementByText("Movimentação cadastrada com sucesso"));
+    }
+
+    @Test
+    public void shouldUpdateBalanceWhenDeletingTransaction() {
+        assertEquals("534.00", sbHomePage.getAccountBalance("Conta para saldo"));
+
+    }
 
 }
