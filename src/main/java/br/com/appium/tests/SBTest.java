@@ -17,6 +17,7 @@ public class SBTest extends BaseTest {
     private SBAccountsPage account = new SBAccountsPage();
     private SBMovementPage sbMovementPage = new SBMovementPage();
     private SBHomePage sbHomePage = new SBHomePage();
+    private SBSummaryPage sbSummaryPage = new SBSummaryPage();
 
     @Before
     public void setUp() {
@@ -74,8 +75,29 @@ public class SBTest extends BaseTest {
 
     @Test
     public void shouldUpdateBalanceWhenDeletingTransaction() {
+        sbMenu.clickReset();
+        wait_(1000);
+
         assertEquals("534.00", sbHomePage.getAccountBalance("Conta para saldo"));
 
+        sbMenu.clickSummary();
+
+        sbSummaryPage.clickUpdate();
+
+        wait_(1000);
+
+        sbSummaryPage.deleteMovement("Movimentacao 3, calculo saldo");
+
+        assertTrue(sbSummaryPage.existElementByText("Movimentação removida com sucesso!"));
+
+        sbMenu.clickHome();
+
+        //atualizar saldos
+        wait_(1000);
+        sbHomePage.scroll(0.3, 0.9);
+        wait_(1000);
+
+        assertEquals("-1000.00", sbHomePage.getAccountBalance("Conta para saldo"));
     }
 
 }
