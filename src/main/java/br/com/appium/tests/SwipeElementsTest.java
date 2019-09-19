@@ -5,7 +5,11 @@ import br.com.appium.pages.MenuPage;
 import br.com.appium.pages.SwipeListPage;
 import org.junit.Assert;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static br.com.appium.core.DriverFactory.getDriver;
 import static org.junit.Assert.*;
 
 public class SwipeElementsTest extends BaseTest {
@@ -15,6 +19,9 @@ public class SwipeElementsTest extends BaseTest {
 
     @Test
     public void shoudInteractWithSwipeList() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Formulário']")));
+
         //clicar swipe list
         menuPage.clickSwipeList();
 

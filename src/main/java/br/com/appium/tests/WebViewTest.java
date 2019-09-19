@@ -10,19 +10,19 @@ public class WebViewTest extends BaseTest {
     private MenuPage menu = new MenuPage();
     private WebViewPage page = new WebViewPage();
 
-    @Test
-    public void shouldDoLogin() {
-        menu.clickHibrido();
-
-        wait_(3000);
-
-        page.enterWebContext();
-
-        //preencher email
-        page.setEmail("teste@teste");
-
-
-
-
-    }
+//    @Test
+//    public void shouldDoLogin() {
+//        menu.clickHibrido();
+//
+//        wait_(3000);
+//
+//        page.enterWebContext();
+//
+//        //preencher email
+//        page.setEmail("teste@teste");
+//
+//
+//
+//
+//    }
 }

@@ -4,7 +4,11 @@ import br.com.appium.core.BaseTest;
 import br.com.appium.pages.DragAndDropPage;
 import br.com.appium.pages.MenuPage;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static br.com.appium.core.DriverFactory.getDriver;
 import static org.junit.Assert.assertArrayEquals;
 
 public class DragAndDropTest extends BaseTest {
@@ -18,6 +22,10 @@ public class DragAndDropTest extends BaseTest {
 
     @Test
     public void shoudDoDragAndDrop() {
+
+        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Formulário']")));
+
         //acessar menu
         menu.clickDragAndDrop();
 

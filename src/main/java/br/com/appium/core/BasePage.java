@@ -57,7 +57,7 @@ public class BasePage {
     }
 
     public void scroll(double start, double end) {
-        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        //WebDriverWait wait = new WebDriverWait(getDriver(), 10);
         //wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Formulário']")));
 
         Dimension size = getDriver().manage().window().getSize();

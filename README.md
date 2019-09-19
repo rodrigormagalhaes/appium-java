@@ -41,4 +41,13 @@ chmod +x appium-xxxx.AppImage
 
 ```
 
-#### Referências
+- **Executar testes no TestObjetc**:
+    - https://app.testobject.com
+    - Na classe `br.com.appium.core.DriverFactory` comentar o método  `createDriver()` e descomentar `createTestObjectDriver()`
+    
+```
+- IntelliJ > botão direito no diretório tests > Run
+- IntelliJ > arquivo de teste > botão direito no nome do teste > Run
+- IntelliJ > arquivo de teste > seção esquerda do arquivo > Run Test
+
+```

@@ -3,7 +3,11 @@ package br.com.appium.tests;
 import br.com.appium.core.BaseTest;
 import br.com.appium.pages.MenuPage;
 import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static br.com.appium.core.DriverFactory.getDriver;
 import static org.junit.Assert.assertTrue;
 
 public class SwipeTest extends BaseTest {
@@ -12,6 +16,9 @@ public class SwipeTest extends BaseTest {
 
     @Test
     public void shouldRealizeSwipe() {
+        WebDriverWait wait = new WebDriverWait(getDriver(), 10);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//*[@text='Formulário']")));
+
         //acessar menu
         menuPage.clickSwipe();
 
